@@ -26,26 +26,55 @@ int stats[]:
 double aptitudes[] - Multiplier to stats that affects growth. Units can have different base stats,
 but their class dictates how much their base stats are multiplied by
 */
+class unit {
 
-std::string name;
-std::string type;
-std::string charClass;
-int xPos;
-int yPos;
-int height;
-int stats[12];
-double aptitudes[12];
+private:
+	std::string name;
+	std::string type;
+	std::string charClass;
+	int xPos;
+	int yPos;
+	int height;
+	int stats[12];
+	double aptitudes[12];
 
-enum statDef {
-	HP,
-	SP,
-	Atk,
-	Def,
-	Int,
-	Res,
-	Hit,
-	Ev,
-	Grd,
-	Mv,
-	Jmp
+	enum statDef {
+		HP,
+		SP,
+		Atk,
+		Def,
+		Int,
+		Res,
+		Hit,
+		Ev,
+		Grd,
+		Mv,
+		Jmp
+	};
+
+
+	//Setter. Change the xPos and yPos by given amount. Change height as needed
+	//Check if movement is valid
+	void move(int xMove, int yMove);
+
+	//Increase most stats by 1 each level up. Move and jump shouldn't change often
+	void levelUp();
+
+	//Set name of a unit
+	void setName(std::string);
+
+	//Set type of a unit
+	void setType(std::string);
+
+	//Set charClass of a unit
+	void setCharClass(std::string);
+
+public:
+	//Constructor
+	unit(std::string name,
+		std::string type,
+		std::string charClass,
+		int stats[],
+		double aptitudes[]);
+
 };
