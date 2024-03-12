@@ -69,6 +69,7 @@ private:
 	//Set charClass of a unit
 	void setCharClass(std::string);
 
+
 public:
 	//Constructor
 	unit(std::string name,
@@ -76,5 +77,9 @@ public:
 		std::string charClass,
 		int stats[],
 		double aptitudes[]);
+
+	//Get position of unit. xPos * yPos
+	int getUnitPos();
+
 
 };
