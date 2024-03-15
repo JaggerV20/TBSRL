@@ -35,6 +35,16 @@ enum KeyPressSurfaces
     KEY_PRESS_SURFACE_DOWN,
     KEY_PRESS_SURFACE_LEFT,
     KEY_PRESS_SURFACE_RIGHT,
+    KEY_PRESS_SURFACE_ENTER,
     KEY_PRESS_SURFACE_TOTAL
 };
 
+//Later include a function to set these using key inputs
+SDL_Keycode CTRL_UP = SDLK_w;
+SDL_Keycode CTRL_DOWN = SDLK_s;
+SDL_Keycode CTRL_LEFT = SDLK_a;
+SDL_Keycode CTRL_RIGHT = SDLK_d;
+SDL_Keycode CTRL_ENTER = SDLK_RETURN;
+
+int xChange = 0;
+int yChange = 0;

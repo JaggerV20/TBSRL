@@ -73,6 +73,8 @@ SDL_Surface* loadSurface(std::string path)
     return loadedSurface;
 }
 
+SDL_Surface* gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
+
 int main(int argc, char* args[]) {
 
     bool quit = false;
@@ -105,11 +107,33 @@ int main(int argc, char* args[]) {
         //Handle events on queue
         while (SDL_PollEvent(&e) != 0)
         {
+            //Use switch statement for keypresses
             //User requests quit
             if (e.type == SDL_QUIT)
             {
                 quit = true;
             }
+            else if (e.type == SDL_KEYDOWN)
+            {
+                //Select surfaces based on key press
+                if (e.key.keysym.sym == CTRL_UP) {
+
+                }
+                else if (e.key.keysym.sym = CTRL_DOWN) {
+
+                }
+                else if (e.key.keysym.sym = CTRL_LEFT) {
+
+                }
+                else if (e.key.keysym.sym = CTRL_RIGHT) {
+
+                }
+                else if (e.key.keysym.sym = CTRL_ENTER) {
+
+                }
+                else {
+
+                }
         }
     
     }
